@@ -1,0 +1,17 @@
+{
+  "name": "projectbot3",
+  "version": "1.0.0",
+  "description": "bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "mark3"
+  },
+  "author": "tube",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "scripts":{
+    "start": "node index.js"
+  }
+}
