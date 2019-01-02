@@ -4,14 +4,13 @@
   "description": "bot",
   "main": "index.js",
   "scripts": {
-    "test": "mark3"
+    "start": "node index.js"
   },
   "author": "tube",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
-  },
-  "scripts":{
-    "start": "node index.js"
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "request": "^2.88.0"
   }
 }
