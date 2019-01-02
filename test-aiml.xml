@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <category>
+        <pattern>ดีจ้า</pattern>
+        <template>สวัสดีฮะ</template>
+    </category>    
+
+    <category>
+        <pattern>HELLO</pattern>
+        <template>Hello</template>
+    </category>  
+
+    <category>
+        <pattern>WHO ARE YOU</pattern>
+        <template>I am HelloBot</template>
+    </category>  
+
+    <category>
+        <pattern>ควยไรล่ะ</pattern>
+        <template>แล้วควยไรล่ะ</template>
+    </category>  
+
+    <category>
+        <pattern>WEATHER</pattern>
+        <template>รอข้อมูลก่อนนะ..</template>
+    </category>  
+
+</aiml>    
