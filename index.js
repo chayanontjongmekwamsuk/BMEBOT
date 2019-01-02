@@ -16,6 +16,7 @@ app.post('/webhook', (req, res) => {
 })
 
 app.listen(port)
+
 function reply(reply_token) {
     let headers = {
 
@@ -27,11 +28,11 @@ function reply(reply_token) {
         replyToken: reply_token,
         messages: [{
             type: 'text',
-            text: 'Hello'
+            text: 'Hello I am sunny'
         },
         {
             type: 'text',
-            text: 'How are you?'
+            text: 'How can I help you?'
         }]
     })
 
