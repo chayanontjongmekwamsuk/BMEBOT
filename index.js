@@ -54,9 +54,9 @@ function reply(reply_token, msg) {
                 columns: [
                     {
                       thumbnailImageUrl: 'https://example.com/bot/images/item1.jpg',
-                      imageBackgroundColor: '#FFFFFF',
-                      title: 'this is menu',
-                      text: 'description',
+                      imageBackgroundColor: '#FFFFE0',
+                      title: 'Day1',
+                      text: 'Information',
                       defaultAction: {
                           type: 'uri',
                           label: 'View detail',
@@ -65,17 +65,17 @@ function reply(reply_token, msg) {
                       actions: [
                           {
                               type: 'postback',
-                              label: 'Buy',
-                              data: 'action=buy&itemid=111'
+                              label: 'Pressure',
+                              data: 'action=pressure&itemid=111'
                           },
                           {
                               type: 'postback',
-                              label: 'Add to cart',
-                              data: 'action=add&itemid=111'
+                              label: 'Temperature',
+                              data: 'action=temp&itemid=111'
                           },
                           {
                               type: 'uri',
-                              label: 'View detail',
+                              label: 'View more detail',
                               uri: 'http://example.com/page/111'
                           }
                       ]
@@ -83,8 +83,8 @@ function reply(reply_token, msg) {
                     {
                       thumbnailImageUrl: 'https://example.com/bot/images/item2.jpg',
                       imageBackgroundColor: '#000000',
-                      title: 'this is menu',
-                      text: 'description',
+                      title: 'Day2',
+                      text: 'Information',
                       defaultAction: {
                           type: 'uri',
                           label: 'View detail',
@@ -93,13 +93,13 @@ function reply(reply_token, msg) {
                       actions: [
                           {
                               type: 'postback',
-                              label: 'Buy',
-                              data: 'action=buy&itemid=222'
+                              label: 'Humidity',
+                              data: 'action=humid&itemid=222'
                           },
                           {
                               type: 'postback',
-                              label: 'Add to cart',
-                              data: 'action=add&itemid=222'
+                              label: 'Accelerometer',
+                              data: 'action=acc&itemid=222'
                           },
                           {
                               type: 'uri',
