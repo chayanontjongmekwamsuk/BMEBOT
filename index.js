@@ -53,14 +53,14 @@ function reply(reply_token, msg) {
                 type: 'carousel',
                 columns: [
                     {
-                      thumbnailImageUrl: 'https://example.com/bot/images/item1.jpg',
+                      thumbnailImageUrl: 'https://www.mcchrystalgroup.com/wp-content/uploads/2017/05/day1.png',
                       imageBackgroundColor: '#FFFFE0',
                       title: 'Day1',
                       text: 'Information',
                       defaultAction: {
                           type: 'uri',
                           label: 'View detail',
-                          uri: 'http://example.com/page/123'
+                          uri: 'https://weather.com/weather/today/l/13.75,100.49?par=google'
                       },
                       actions: [
                           {
@@ -76,12 +76,12 @@ function reply(reply_token, msg) {
                           {
                               type: 'uri',
                               label: 'View more detail',
-                              uri: 'http://example.com/page/111'
+                              uri: 'https://weather.com/weather/today/l/13.75,100.49?par=google'
                           }
                       ]
                     },
                     {
-                      thumbnailImageUrl: 'https://example.com/bot/images/item2.jpg',
+                      thumbnailImageUrl: 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwj8-saf4dDfAhVIso8KHWkKCDsQjRx6BAgBEAU&url=https%3A%2F%2Fcarlosvargas.com%2Fday2%2F&psig=AOvVaw2bCA9x7WB-e6XEGagqadZE&ust=1546575607014010',
                       imageBackgroundColor: '#000000',
                       title: 'Day2',
                       text: 'Information',
