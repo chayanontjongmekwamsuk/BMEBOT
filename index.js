@@ -81,14 +81,14 @@ function reply(reply_token, msg) {
                       ]
                     },
                     {
-                      thumbnailImageUrl: 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwj8-saf4dDfAhVIso8KHWkKCDsQjRx6BAgBEAU&url=https%3A%2F%2Fcarlosvargas.com%2Fday2%2F&psig=AOvVaw2bCA9x7WB-e6XEGagqadZE&ust=1546575607014010',
+                      thumbnailImageUrl: 'https://carlosvargas.com/wp-content/uploads/2014/01/day2-1-1.jpg',
                       imageBackgroundColor: '#000000',
                       title: 'Day2',
                       text: 'Information',
                       defaultAction: {
                           type: 'uri',
                           label: 'View detail',
-                          uri: 'http://example.com/page/222'
+                          uri: 'https://weather.com/weather/today/l/13.75,100.49?par=google'
                       },
                       actions: [
                           {
