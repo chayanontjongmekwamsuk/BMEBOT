@@ -29,22 +29,26 @@ function reply(reply_token, msg) {
     
     let body = JSON.stringify({
         replyToken: reply_token,
-        /*
-        messages: [{
+
+        
+        messages: [{                // answer normally
             type: 'text',
-            text: 'Hi Aoff who is the most beautiful girl'
+            text: '20'
         },
         {
             type: 'text',
             text: 'How can I help you?'
-        }]*/
+        }]
+
+
 
         /*
         messages: [{
-            type: 'text',
+            type: 'text',           // echo message
             text: msg
         }]*/
 
+        /*
         messages: [{
 
             type: 'template',
@@ -112,7 +116,9 @@ function reply(reply_token, msg) {
                 imageAspectRatio: 'rectangle',
                 imageSize: 'cover'
             }
-        }]  
+        }]*/
+          
+
     })
 
     request.post({
