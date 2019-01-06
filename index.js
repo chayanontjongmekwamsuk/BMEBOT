@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 const request = require('request')
 
 const app = express()
-const port = process.env.PORT || 4000
+const port = process.env.PORT || 4000   // whatever is in the environment variable PORT or 3000 if there's nothing there.
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -18,7 +18,7 @@ app.post('/webhook', (req, res) => {
     res.sendStatus(200)
 })
 
-app.listen(port)
+app.listen(port)    // makes your server be able to accept a parameter from the environment that port to listen on, depending on your requirement and the requirement of the environment
 
 function reply(reply_token, msg) {
 //function reply(reply_token) {
