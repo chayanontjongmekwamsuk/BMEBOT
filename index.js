@@ -13,7 +13,7 @@ app.post('/webhook', (req, res) => {
 
     let reply_token = req.body.events[0].replyToken     // cannot change event
     let msg = req.body.events[0].message.text
-    push(reply_token)
+    push(reply_token,msg)
     //1/reply(reply_token)  
     //2/reply(reply_token, msg)     // send to function
     res.sendStatus(200)
@@ -29,6 +29,8 @@ function push(reply_token,msg){
 
     let body = JSON.stringify({
         reply_token: reply_token,
+
+        to: 'U2cce7962a9ba284308540b3b28ffa885',
 
         messages:[
             {
