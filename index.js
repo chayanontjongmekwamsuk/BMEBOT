@@ -13,14 +13,16 @@ app.post('/webhook', (req, res) => {
 
     let reply_token = req.body.events[0].replyToken     // cannot change event
     let msg = req.body.events[0].message.text
-    push(reply_token,msg)
-    //1/reply(reply_token)  
-    //2/reply(reply_token, msg)     // send to function
+    //3/ push(reply_token,msg)    // didn't work
+    //1/ reply(reply_token)  
+
+    reply(reply_token, msg)     // send to function
     res.sendStatus(200)
 })
 
 app.listen(port)    // makes your server be able to accept a parameter from the environment that port to listen on, depending on your requirement and the requirement of the environment
 
+/*
 function push(reply_token,msg){
     let headers = {
         'Content-Type': 'application/json',
@@ -50,9 +52,9 @@ request.post({
     headers: headers,
     body: body
 
-})
+})*/
 
-/*2/
+
 function reply(reply_token, msg) {
 //1/function reply(reply_token) {
     let headers = {
@@ -60,20 +62,20 @@ function reply(reply_token, msg) {
         'Authorization': 'Bearer {leSLT6TM73BCkORSMedsDEI0MfrS29lfV6wIIsXbF6UmJ5Y2d+Y80RAlxtIkfFuPhJOL5+8lx4Wyv6ojj1Eibr04O1n3fORRGHwUnIyM8tfV//liRGkp73cDYiCTN/ZTkd42KICBYRCWO4ctm02u/wdB04t89/1O/w1cDnyilFU=}'
     }
     
+    if(msg == 'hi'){
     let body = JSON.stringify({
         replyToken: reply_token,
-
         
         messages: [{                // answer normally
-            type: 'text',
-            text: '20'
-        },
-        {
-            type: 'text',
-            text: 'How can I help you?'
-        }]
-
-
+                 type: 'text',
+                 text: 'Hi'
+            },
+            {
+                type: 'text',
+                text: 'How can I help you?'
+            }]
+        
+   
 
         /*
         messages: [{
@@ -151,8 +153,9 @@ function reply(reply_token, msg) {
             }
         }]*/
           
-/*
+
     })
+}
 
     request.post({
         url: 'https://api.line.me/v2/bot/message/reply',
@@ -163,4 +166,5 @@ function reply(reply_token, msg) {
         console.log('status = ' + res.statusCode);
     });
 }
-*/
+
+
