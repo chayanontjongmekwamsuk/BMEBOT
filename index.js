@@ -11,17 +11,48 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.post('/webhook', (req, res) => {
 
-    let reply_token = req.body.events[1].replyToken
+    let reply_token = req.body.events[0].replyToken     // cannot change event
     let msg = req.body.events[0].message.text
-    //reply(reply_token)  
-    reply(reply_token, msg)  
+    push(reply_token)
+    //1/reply(reply_token)  
+    //2/reply(reply_token, msg)     // send to function
     res.sendStatus(200)
 })
 
 app.listen(port)    // makes your server be able to accept a parameter from the environment that port to listen on, depending on your requirement and the requirement of the environment
 
+function push(reply_token){
+    let headers = {
+        'Content-Type': 'application/json'
+        'Authorization': 'Bearer {leSLT6TM73BCkORSMedsDEI0MfrS29lfV6wIIsXbF6UmJ5Y2d+Y80RAlxtIkfFuPhJOL5+8lx4Wyv6ojj1Eibr04O1n3fORRGHwUnIyM8tfV//liRGkp73cDYiCTN/ZTkd42KICBYRCWO4ctm02u/wdB04t89/1O/w1cDnyilFU=}'
+    }
+
+    let body = JSON.stringify({
+        reply_token: reply_token,
+
+        "messages":[
+            {
+                "type":"text",
+                "text":"Hello, world1"
+            },
+            {
+                "type":"text",
+                "text":"Hello, world2"
+            }
+        ]    
+    })
+}
+
+request.post({
+    url: 'https://api.line.me/v2/bot/message/push'
+    headers: headers,
+    body: body
+
+})
+
+/*2/
 function reply(reply_token, msg) {
-//function reply(reply_token) {
+//1/function reply(reply_token) {
     let headers = {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer {leSLT6TM73BCkORSMedsDEI0MfrS29lfV6wIIsXbF6UmJ5Y2d+Y80RAlxtIkfFuPhJOL5+8lx4Wyv6ojj1Eibr04O1n3fORRGHwUnIyM8tfV//liRGkp73cDYiCTN/ZTkd42KICBYRCWO4ctm02u/wdB04t89/1O/w1cDnyilFU=}'
@@ -118,7 +149,7 @@ function reply(reply_token, msg) {
             }
         }]*/
           
-
+/*
     })
 
     request.post({
@@ -130,3 +161,4 @@ function reply(reply_token, msg) {
         console.log('status = ' + res.statusCode);
     });
 }
+*/
