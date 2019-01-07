@@ -62,7 +62,7 @@ function reply(reply_token, msg) {
         'Authorization': 'Bearer {leSLT6TM73BCkORSMedsDEI0MfrS29lfV6wIIsXbF6UmJ5Y2d+Y80RAlxtIkfFuPhJOL5+8lx4Wyv6ojj1Eibr04O1n3fORRGHwUnIyM8tfV//liRGkp73cDYiCTN/ZTkd42KICBYRCWO4ctm02u/wdB04t89/1O/w1cDnyilFU=}'
     }
     
-    if(msg == "hi"){
+    if("msg" == "hi"){
     let body = JSON.stringify({
         replyToken: reply_token,
         
