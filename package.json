@@ -1,10 +1,10 @@
 {
-  "name": "projectbot3",
+  "name": "BMEBOT",
   "version": "1.0.0",
   "description": "bot",
-  "main": "index.js",
+  "main": "linebot.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node linebot.js"
   },
   "author": "tube",
   "license": "ISC",

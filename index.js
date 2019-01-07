@@ -1,5 +1,5 @@
 // initial return hello
-
+/*
 const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
@@ -21,38 +21,6 @@ app.post('/webhook', (req, res) => {
 })
 
 app.listen(port)    // makes your server be able to accept a parameter from the environment that port to listen on, depending on your requirement and the requirement of the environment
-
-/*
-function push(reply_token,msg){
-    let headers = {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer {leSLT6TM73BCkORSMedsDEI0MfrS29lfV6wIIsXbF6UmJ5Y2d+Y80RAlxtIkfFuPhJOL5+8lx4Wyv6ojj1Eibr04O1n3fORRGHwUnIyM8tfV//liRGkp73cDYiCTN/ZTkd42KICBYRCWO4ctm02u/wdB04t89/1O/w1cDnyilFU=}'
-    }
-
-    let body = JSON.stringify({
-        reply_token: reply_token,
-
-        to: 'U2cce7962a9ba284308540b3b28ffa885',
-
-        messages:[
-            {
-                type:'text',
-                text:'Hello'
-            },
-            {
-                type:'text',
-                text:'Hello, world2'
-            }
-        ]    
-    })
-}
-
-request.post({
-    url: 'https://api.line.me/v2/bot/message/push',
-    headers: headers,
-    body: body
-
-})*/
 
 
 function reply(reply_token, msg) {
@@ -153,7 +121,7 @@ function reply(reply_token, msg) {
             }
         }]*/
           
-
+/*
     })
 }
 
@@ -166,5 +134,5 @@ function reply(reply_token, msg) {
         console.log('status = ' + res.statusCode);
     });
 }
-
+*/
 
