@@ -23,28 +23,28 @@ app.listen(port)    // makes your server be able to accept a parameter from the 
 
 function push(reply_token,msg){
     let headers = {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
         'Authorization': 'Bearer {leSLT6TM73BCkORSMedsDEI0MfrS29lfV6wIIsXbF6UmJ5Y2d+Y80RAlxtIkfFuPhJOL5+8lx4Wyv6ojj1Eibr04O1n3fORRGHwUnIyM8tfV//liRGkp73cDYiCTN/ZTkd42KICBYRCWO4ctm02u/wdB04t89/1O/w1cDnyilFU=}'
     }
 
     let body = JSON.stringify({
         reply_token: reply_token,
 
-        "messages":[
+        messages:[
             {
-                "type":"text",
-                "text":"Hello, world1"
+                type:'text',
+                text:'Hello'
             },
             {
-                "type":"text",
-                "text":"Hello, world2"
+                type:'text',
+                text:'Hello, world2'
             }
         ]    
     })
 }
 
 request.post({
-    url: 'https://api.line.me/v2/bot/message/push'
+    url: 'https://api.line.me/v2/bot/message/push',
     headers: headers,
     body: body
 
