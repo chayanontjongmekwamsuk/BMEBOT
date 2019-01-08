@@ -44,7 +44,6 @@ function push(smsg){
 
 
 function reply(reply_token, msg) {
-    if(msg == "hi"){
     
     let body = JSON.stringify({
         replyToken: reply_token,
@@ -141,7 +140,6 @@ function reply(reply_token, msg) {
           
 
     })
-}
     curl('reply', body)
 }
 
