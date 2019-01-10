@@ -47,7 +47,127 @@ function reply(reply_token, msg) {
     
     let body = JSON.stringify({
         replyToken: reply_token,
-        messages: [{                // answer normally
+        messages: [{
+            type: 'flex',
+            altText: 'Flex Message',
+            contents: {
+              type: 'bubble',
+              header: {
+                type: 'box',
+                layout: 'vertical',
+                contents: [
+                  {
+                    type: 'text',
+                    text: 'Sanam Chandra Palace ',
+                    size: 'xs',
+                    weight: 'bold',
+                    color: '#AAAAAA'
+                  }
+                ]
+              },
+              hero: {
+                type: 'image',
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Chali_Mongkol_Asana.jpg/1200px-Chali_Mongkol_Asana.jpg',
+                flex: 3,
+                align: 'start',
+                size: 'full',
+                aspectRatio: '20:13',
+                aspectMode: 'cover',
+                action: {
+                  type: 'uri',
+                  label: 'Action',
+                  uri: 'https://linecorp.com/'
+                }
+              },
+              body: {
+                type: 'box',
+                layout: 'horizontal',
+                spacing: 'md',
+                contents: [
+                  {
+                    type: 'box',
+                    layout: 'vertical',
+                    flex: 1,
+                    contents: [
+                      {
+                        type: 'image',
+                        url: 'https://static.bhphotovideo.com/explora/sites/default/files/styles/top_shot/public/Color-Temperature.jpg?itok=yHYqoXAf',
+                        gravity: 'bottom',
+                        size: 'sm',
+                        aspectRatio: '4:3',
+                        aspectMode: 'cover'
+                      },
+                      {
+                        type: 'image',
+                        url: 'https://www.clipartmax.com/png/middle/251-2517394_backpacking-package-tour-tourism-cartoon-tourist-cartoon-png.png',
+                        margin: 'md',
+                        size: 'sm',
+                        aspectRatio: '4:3',
+                        aspectMode: 'cover'
+                      }
+                    ]
+                  },
+                  {
+                    type: 'box',
+                    layout: 'vertical',
+                    flex: 2,
+                    contents: [
+                      {
+                        type: 'text',
+                        text: 'Temperature : ',
+                        flex: 1,
+                        size: 'xs',
+                        gravity: 'top',
+                        weight: 'bold'
+                      },
+                      {
+                        type: 'separator',
+                        color: '#2ABA11'
+                      },
+                      {
+                        type: 'text',
+                        text: 'Humidity     :',
+                        flex: 2,
+                        size: 'xs',
+                        gravity: 'center',
+                        weight: 'bold'
+                      },
+                      {
+                        type: 'separator',
+                        color: '#54BC0A'
+                      },
+                      {
+                        type: 'text',
+                        text: 'P In      :',
+                        flex: 2,
+                        size: 'xs',
+                        gravity: 'center',
+                        weight: 'bold',
+                        color: '#141813'
+                      },
+                      {
+                        type: 'separator',
+                        color: '#06BC0B'
+                      },
+                      {
+                        type: 'text',
+                        text: 'P Out    :',
+                        flex: 1,
+                        size: 'xs',
+                        gravity: 'bottom',
+                        weight: 'bold'
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        
+        
+        ]
+            
+            /*{               // answer normally
                  type: 'text',
                  text: 'Can I help you'
             },
@@ -56,12 +176,7 @@ function reply(reply_token, msg) {
                 packageId: '11539',
                 stickerId: '52114115'
             }
-        
-        
-        ]
-        
-    
-
+*/
         /*
         messages: [{
             type: 'text',           // echo message
