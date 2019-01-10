@@ -14,8 +14,8 @@ app.use(bodyParser.json())
 
 // pushing
 app.get('/webhook', (req, res) => {
-    let smsg = 'Welcome, Can I help you'
-    // push(smsg)
+    //let smsg = 'Welcome, Can I help you'
+    //push(smsg)
     res.send(smsg)
 })
 
@@ -24,21 +24,41 @@ app.post('/webhook', (req, res) => {
 
     let reply_token = req.body.events[0].replyToken     // cannot change event
     let msg = req.body.events[0].message.text
+    push()
     reply(reply_token,msg)    
     res.sendStatus(200)
 })
 
 app.listen(port)    // makes your server be able to accept a parameter from the environment that port to listen on, depending on your requirement and the requirement of the environment
 
-function push(smsg){
+function push(){
     let body = JSON.stringify({
         to: 'U2cce7962a9ba284308540b3b28ffa885',
     messages: [{
-        type: 'text',
-        text: smsg
-    }]   
+        type: 'template',
+        altText: 'this is a buttons template',
+        template: {
+          type: 'buttons',
+          actions: [
+            {
+              type: 'postback',
+              label: 'Admin_Mon',
+              text: 'Add',
+              data: 'input'
+            }
+          ],
+          thumbnailImageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Chali_Mongkol_Asana.jpg/1200px-Chali_Mongkol_Asana.jpg',
+          title: 'Sanam Chandra Palace',
+          text: 'Our Information'
+        }
+      }]   
     
   })
+  console.log('pass')
+  if(body.messages.template.data == 'input'){
+      //send()
+      console.log('Sent')
+  }
   curl('push', body)
 }
 
