@@ -14,9 +14,11 @@ app.use(bodyParser.json())
 
 // pushing
 app.get('/webhook', (req, res) => {
-    //let smsg = 'Welcome, Can I help you'
-    //push(smsg)
-    res.send(smsg)
+    let user = req.body.events[0].userId
+    let smsg = 'Welcome, Can I help you'
+    push(smsg)
+    push(user)
+    res.send(user)
 })
 
 // replying
@@ -24,7 +26,7 @@ app.post('/webhook', (req, res) => {
 
     let reply_token = req.body.events[0].replyToken     // cannot change event
     let msg = req.body.events[0].message.text
-    push()
+    let user = req.body.events[0].userId
     reply(reply_token,msg)    
     res.sendStatus(200)
 })
@@ -33,7 +35,7 @@ app.listen(port)    // makes your server be able to accept a parameter from the 
 
 function push(){
     let body = JSON.stringify({
-        to: 'U2cce7962a9ba284308540b3b28ffa885',
+        to: user,
     messages: [{
         type: 'template',
         altText: 'this is a buttons template',
@@ -42,17 +44,16 @@ function push(){
           actions: [
             {
               type: 'postback',
-              label: 'Admin_Mon',
+              label: 'More Info',
               text: 'Add',
               data: 'input'
             }
           ],
-          thumbnailImageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Chali_Mongkol_Asana.jpg/1200px-Chali_Mongkol_Asana.jpg',
-          title: 'Sanam Chandra Palace',
-          text: 'Our Information'
+          thumbnailImageUrl: 'https://i.postimg.cc/vmZPD22P/PC270430.jpg',
+          title: 'My namne is tube',
+          text: 'My Information'
         }
       }]   
-    
   })
   console.log('pass')
   if(body.messages.template.data == 'input'){
@@ -62,9 +63,7 @@ function push(){
   curl('push', body)
 }
 
-
 function reply(reply_token, msg) {
-    
     let body = JSON.stringify({
         replyToken: reply_token,
         messages: [{
@@ -272,7 +271,6 @@ function reply(reply_token, msg) {
                 imageSize: 'cover'
             }
         }]*/
-          
 
     })
     curl('reply', body)
