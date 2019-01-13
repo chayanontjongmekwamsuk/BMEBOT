@@ -17,7 +17,7 @@ app.get('/webhook', (req, res) => {
     let user = req.body.events[0].userId
     let smsg = 'Welcome, Can I help you'
     push(smsg)
-    //push(user)
+    push(user)
     res.send(user)
 })
 
@@ -27,7 +27,7 @@ app.post('/webhook', (req, res) => {
     let reply_token = req.body.events[0].replyToken     // cannot change event
     let msg = req.body.events[0].message.text
     let user = req.body.events[0].userId
-    push(user)
+    //push(user)
     if(msg == 'hello' || 'hi' || 'yo')
     { reply(reply_token,msg)    }
     //replyflex(reply_token,msg)    
