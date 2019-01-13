@@ -17,7 +17,7 @@ app.get('/webhook', (req, res) => {
     let user = req.body.events[0].userId
     let smsg = 'Welcome, Can I help you'
     push(smsg)
-    push(user)
+    //push(user)
     res.send(user)
 })
 
@@ -27,13 +27,19 @@ app.post('/webhook', (req, res) => {
     let reply_token = req.body.events[0].replyToken     // cannot change event
     let msg = req.body.events[0].message.text
     let user = req.body.events[0].userId
-    reply(reply_token,msg)    
+    push(user)
+    if(msg == 'hello' || 'hi' || 'yo')
+    { reply(reply_token,msg)    }
+    //replyflex(reply_token,msg)    
     res.sendStatus(200)
 })
 
 app.listen(port)    // makes your server be able to accept a parameter from the environment that port to listen on, depending on your requirement and the requirement of the environment
 
 function push(){
+    let reply_token = req.body.events[0].replyToken     // cannot change event
+    let msg = req.body.events[0].message.text
+    let user = req.body.events[0].userId
     let body = JSON.stringify({
         to: user,
     messages: [{
@@ -57,13 +63,13 @@ function push(){
   })
   console.log('pass')
   if(body.messages.template.data == 'input'){
-      //send()
+      replyflex(reply_token, msg)
       console.log('Sent')
   }
   curl('push', body)
 }
 
-function reply(reply_token, msg) {
+function replyflex(reply_token, msg) {
     let body = JSON.stringify({
         replyToken: reply_token,
         messages: [{
