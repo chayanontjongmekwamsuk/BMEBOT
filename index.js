@@ -77,18 +77,6 @@ function reply(reply_token, msg) {
 
         })
     }
-        
-    else{
-    let body = JSON.stringify({
-        replyToken: reply_token,
-        
-        messages: [{               // answer normally
-                type: 'text',
-                text: 'Something wrong'
-
-        }]
-    })
-    }
    
 
         /*
